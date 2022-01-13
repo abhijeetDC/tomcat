@@ -1,2 +1,2 @@
-[webservers]
+[all]
 54.151.50.76 ansible_user=ec2-user ansible_connection=ssh
