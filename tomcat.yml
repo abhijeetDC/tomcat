@@ -5,19 +5,19 @@
 
   tasks:
   - name: Install OpenJDK
-    apt:
-      name: openjdk-11-jre-headless
+    yum:
+      name: java-1.8.0-openjdk
 
   - name: download tomcat server packages
     get_url:
-      url: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
+      url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/bin/apache-tomcat-9.0.56.tar.gz
       dest: /usr/local
 
   - name: extract tomcat packages
     unarchive:
-      src: /usr/local/apache-tomcat-9.0.44.tar.gz
+      src: /usr/local/apache-tomcat-9.0.56.tar.gz
       dest: /usr/local
       remote_src: yes
 
   - name: start tomcat services
-    shell: nohup /usr/local/apache-tomcat-9.0.44/bin/startup.sh
+    shell: nohup /usr/local/apache-tomcat-9.0.56/bin/startup.sh
